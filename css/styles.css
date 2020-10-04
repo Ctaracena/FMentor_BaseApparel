@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(135deg, white, #fff5f5);
+  overflow-x: hidden;
+}
+
+.card {
+  background-image: url("../images/bg-pattern-desktop.svg");
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 600px;
+      grid-template-columns: 1fr 600px;
+  -ms-grid-rows: 100px 1fr;
+      grid-template-rows: 100px 1fr;
+      grid-template-areas: "logo picture" "details picture";
+}
+
+.card .logo-container {
+  padding: 70px 20% 0;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.card .details {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: details;
+  width: 50vw;
+  padding: 60px 5% 0 20%;
+}
+
+.card .details h2 {
+  font-size: 66px;
+  letter-spacing: 13px;
+  color: #ce9797;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 100px 0 0px;
+}
+
+.card .details h1 {
+  margin-top: 0;
+  font-size: 62px;
+  letter-spacing: 12px;
+  color: #413a3a;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.card .details p {
+  color: #ce9797;
+  margin-right: 80px;
+  line-height: 1.8;
+}
+
+.card .details .email-form label {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card .details .email-form label input {
+  width: 385px;
+  height: 50px;
+  border: 1px solid #ce9797;
+  border-radius: 30px;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  color: #ce9797;
+  padding-left: 30px;
+}
+
+.card .details .email-form label .input-error {
+  border: 2px solid #f96262;
+}
+
+.card .details .email-form label input::-webkit-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.card .details .email-form label input:-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.card .details .email-form label input::-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.card .details .email-form label input::placeholder {
+  color: #ce9797;
+  opacity: 0.6;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.card .details .email-form label .icon-error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: -110px;
+  width: 24px;
+  height: 24px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  opacity: 0;
+}
+
+.card .details .email-form label .submit {
+  width: 90px;
+  height: 56px;
+  border-radius: 30px;
+  margin-left: -100px;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 1px 1px 5px 2px rgba(238, 140, 140, 0.4);
+          box-shadow: 1px 1px 5px 2px rgba(238, 140, 140, 0.4);
+  cursor: pointer;
+}
+
+.card .details .email-form label .submit:hover {
+  -webkit-box-shadow: 0px 2px 5px 3px rgba(238, 140, 140, 0.7);
+          box-shadow: 0px 2px 5px 3px rgba(238, 140, 140, 0.7);
+}
+
+.card .details .email-form .error {
+  display: none;
+  color: #f96262;
+  padding-left: 30px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.card .image-container {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: picture;
+  width: 50vw;
+  height: 100vh;
+  background-image: url("../images/hero-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1024px) {
+  .card .logo-container {
+    padding: 60px 10% 0;
+  }
+  .card .details {
+    padding: 60px 1% 0 10%;
+  }
+  .card .details h2 {
+    margin: 70px 0 0px;
+  }
+  .card .details h1 {
+    font-size: 55px;
+  }
+  .card .details .email-form label input {
+    width: 310px;
+  }
+  .card .image-container img {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    margin-bottom: 70px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 130px 1fr 1fr;
+        grid-template-rows: 130px 1fr 1fr;
+        grid-template-areas: "logo" "picture" "details";
+  }
+  .card .logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+    padding: 50px 10% 50px;
+  }
+  .card .details {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: details;
+    width: 100vw;
+    padding: 0px 22% 0;
+    text-align: center;
+  }
+  .card .details p {
+    margin-right: 0px;
+  }
+  .card .details .email-form label {
+    margin-top: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .card .details .email-form label input {
+    width: 385px;
+  }
+  .card .image-container {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: picture;
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    -ms-grid-rows: 130px 0.8fr 1fr;
+        grid-template-rows: 130px 0.8fr 1fr;
+  }
+  .card .logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+    padding: 50px 8% 50px;
+  }
+  .card .details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: details;
+    padding: 0px 15% 0;
+  }
+  .card .image-container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: picture;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    margin-bottom: 70px;
+    -ms-grid-rows: 100px 0.6fr 1fr;
+        grid-template-rows: 100px 0.6fr 1fr;
+  }
+  .card .logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+    padding: 30px 8% 30px;
+  }
+  .card .details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: details;
+    padding: 0px 12% 0;
+  }
+  .card .details h2 {
+    font-size: 40px;
+  }
+  .card .details h1 {
+    font-size: 36px;
+  }
+  .card .details .email-form label input {
+    width: 360px;
+  }
+  .card .image-container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: picture;
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card .logo-container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  .card .details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: details;
+    padding: 0px 5% 0;
+  }
+  .card .details h2 {
+    font-size: 40px;
+  }
+  .card .details h1 {
+    font-size: 34px;
+  }
+  .card .details .email-form label input {
+    width: 280px;
+  }
+  .card .image-container {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    grid-area: picture;
+    height: 40vh;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

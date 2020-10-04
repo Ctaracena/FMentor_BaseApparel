@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,24 +16,28 @@
   </style>
 </head>
 <body>
-  <header>
+  <div class="card">
     <div class="logo-container">
-      <img src="images/logo.svg" alt="logo">
+      <img class="logo" src="images/logo.svg" alt="logo">
     </div>
-  </header>
-
-  <div class="coming-soon">
-    <h2>We're</h2>
-    <h1>coming soon</h1>
-    <p>Hello fellow shoppers! We're currently building our new fashion store. 
-      Add your email below to stay up-to-date with announcements and our launch deals.</p>
-  </div>
-
-  <div class="email">
-    <label for="email">
-      <input type="email" name="email" id="email" placeholder="Email Address">
-    </label>
-    <p class="error">Please provide a valid email</p>
+    <div class="details">
+        <h2>pronto</h2>
+        <h1>estaremos aquí</h1>
+        <p>Hola amigos compradores! Estamos construyendo nuestra tienda de ropa. 
+          Dejanos tu correo abajo para estar al tanto de anuncios y ofertas de lanzamiento.</p>
+    
+      <div class="email-form">
+        <label for="email">
+          <input type="email" name="email" id="email" placeholder="Correo electronico">
+          <img class="icon-error" src="images/icon-error.svg" alt="">
+          <div class="submit"><img src="images/icon-arrow.svg" alt="submit"></div>
+        </label>
+        <p class="error">Por favor ingresa un correo válido</p>
+      </div>  
+    </div>
+  
+    <div class="image-container">
+    </div>
   </div>
 
   <footer>
@@ -41,5 +46,6 @@
       Coded by <a href="#">Your Name Here</a>.
     </p>
   </footer>
+  <script src="js/index.js"></script>
 </body>
 </html>

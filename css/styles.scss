@@ -1,0 +1,275 @@
+@import '_variables';
+
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  @include gradient1();
+  overflow-x: hidden;
+}
+
+.card {
+  background-image: url('../images/bg-pattern-desktop.svg');
+  display: grid;
+  grid-template-columns: 1fr 600px;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: 
+    "logo picture"
+    "details picture";
+  .logo-container {
+    padding: 70px 20% 0;
+    grid-area: logo;
+  }
+  .details {
+    box-sizing: border-box;
+    grid-area: details;
+    width: 50vw;
+    padding: 60px 5% 0 20%;
+      h2 {
+        font-size: 66px;
+        letter-spacing: 13px;
+        color: $Desaturated-Red;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin: 100px 0 0px;
+      }
+      h1 {
+        margin-top: 0;
+        font-size: 62px;
+        letter-spacing: 12px;
+        color: $Dark-Grayish-Red;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      p {
+        color: $Desaturated-Red;
+        margin-right: 80px;
+        line-height: 1.8;
+      }
+      .email-form {
+        label {
+          margin-top: 35px;
+          display: flex;
+          input {
+            width: 385px;
+            height: 50px;
+            border: 1px solid $Desaturated-Red;
+            border-radius: 30px;
+            outline: none;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 15px;
+            color: $Desaturated-Red;
+            padding-left: 30px;
+          }
+          .input-error {
+            border: 2px solid $Soft-Red;
+          }
+          input::placeholder {
+            color: $Desaturated-Red;
+            opacity: 0.6;
+            font-size: 15px;
+            font-family: 'Josefin Sans', sans-serif;
+          }
+          .icon-error {
+            display: flex;
+            position: relative;
+            left: -110px;
+            width: 24px;
+            height: 24px;
+            align-self: center;
+            opacity: 0;
+          }
+          .submit {
+            width: 90px;
+            height: 56px;
+            border-radius: 30px;
+            margin-left: -100px;
+            @include gradient2();
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 1px 5px 2px rgba($color: hsl(0, 74%, 74%), $alpha: 0.4);
+            cursor: pointer;
+          }
+          .submit:hover {
+            box-shadow: 0px 2px 5px 3px rgba($color: hsl(0, 74%, 74%), $alpha: 0.7);
+          }
+        }
+        .error {
+          display: none;
+          color: $Soft-Red;
+          padding-left: 30px;
+          font-size: 14px;
+          margin-top: 6px;
+        }
+      }  
+  }
+
+  .image-container {
+    grid-area: picture;
+    width: 50vw;
+    height: 100vh;
+    background-image: url('../images/hero-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+}
+
+@media screen and (max-width: 1024px) {
+  .card {
+    .logo-container {
+      padding: 60px 10% 0;
+    }
+    .details {
+      padding: 60px 1% 0 10%;
+      h2 {
+        margin: 70px 0 0px;
+      }
+      h1 {
+        font-size: 55px;
+      }
+      .email-form {
+        label {
+          input {
+            width: 310px;
+          }
+        }
+      }  
+    }
+    .image-container img {
+      width: 500px;
+    }
+    
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+    
+  .card {
+    margin-bottom: 70px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 1fr 1fr;
+    grid-template-areas: 
+      "logo"
+      "picture"
+      "details";
+    .logo-container {
+      grid-area: logo;
+      padding: 50px 10% 50px;
+    }
+    .details {
+      grid-area: details;
+      width: 100vw;
+      padding: 0px 22% 0;
+      text-align: center;
+        p {
+          margin-right: 0px;
+        }
+        .email-form {
+          label {
+            margin-top: 35px;
+            display: flex;
+            input {
+              width: 385px;
+            }
+          }
+        }  
+    }
+
+    .image-container {
+      grid-area: picture;
+      width: 100vw;
+      height: 60vh;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+    
+  .card {
+    grid-template-rows: 130px 0.8fr 1fr;
+    .logo-container {
+      grid-area: logo;
+      padding: 50px 8% 50px;
+    }
+    .details {
+      grid-area: details;
+      padding: 0px 15% 0;
+    }
+
+    .image-container {
+      grid-area: picture;
+      height: 50vh;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+    
+  .card {
+    margin-bottom: 70px;
+    grid-template-rows: 100px 0.6fr 1fr;
+    .logo-container {
+      grid-area: logo;
+      padding: 30px 8% 30px;
+    }
+    .details {
+      grid-area: details;
+      padding: 0px 12% 0;
+      h2 {
+        font-size: 40px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      .email-form {
+        label {
+          input {
+            width: 360px;
+          }
+        }
+      }
+    }
+
+    .image-container {
+      grid-area: picture;
+      height: 40vh;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+    
+  .card {
+    .logo-container {
+      grid-area: logo;
+    }
+    .details {
+      grid-area: details;
+      padding: 0px 5% 0;
+      h2 {
+        font-size: 40px;
+      }
+      h1 {
+        font-size: 34px;
+      }
+      .email-form {
+        label {
+          input {
+            width: 280px;
+          }
+        }
+      }
+    }
+
+    .image-container {
+      grid-area: picture;
+      height: 40vh;
+    }
+  }
+}
